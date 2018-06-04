@@ -40,8 +40,10 @@ public class SpeedCrazyTest {
 			testData = new String(byteArrays.toByteArray());
 		}
 
-		// 2つのメソッドは同じ文字列を返すよね！
-		assertThat(SpeedCrazyCharAt.test(testData), is(SpeedCrazyReplaceAll.test(testData)));
+		// 3つのメソッドは同じ文字列を返すよね！
+		String resultOfCharAt = SpeedCrazyCharAt.test(testData);
+		assertThat(resultOfCharAt, is(SpeedCrazyReplaceAll.test(testData)));
+		assertThat(resultOfCharAt, is(SpeedCrazyPattern.test(testData)));
 	}
 
 }
